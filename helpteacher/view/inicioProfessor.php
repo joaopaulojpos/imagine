@@ -13,7 +13,7 @@
                 <li><a href="">Correção de Avaliações</a></li>                                            
             </ul>              
             <div>
-                <button type='button' value='Sair' onclick="location.href='index.php'">Sair</button>
+                <button type='button' value='Sair' onclick="location.href='../index.php'">Sair</button>
             </div>		
     </body>
 </html>

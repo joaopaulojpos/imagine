@@ -39,7 +39,36 @@
 
             <div>            
                 <label for="estado">Estado:</label>
-                <input type="text" id="estado" name="estado">
+                <select>
+                    <option value="">Selecione</option>
+                    <option>AC => Acre</option>
+                    <option>AL => Alagoas</option>
+                    <option>AP => Amapá</option>
+                    <option>AM => Amazonas</option>
+                    <option>BA => Bahia</option>
+                    <option>CE => Ceará</option>
+                    <option>DF => Distrito Federal</option>
+                    <option>ES => Espírito Santo</option>
+                    <option>GO => Goiás</option>
+                    <option>MA => Maranhão</option>
+                    <option>MT => Mato Grosso</option>
+                    <option>MS => Mato Grosso do Sul</option>
+                    <option>MG => Minas Gerais</option>
+                    <option>PA => Pará</option>
+                    <option>PB => Paraíba</option>
+                    <option>PR => Paraná</option>
+                    <option>PE => Pernambuco</option>
+                    <option>PI => Piauí</option>
+                    <option>RJ => Rio de Janeiro</option>
+                    <option>RN => Rio Grande do Norte</option>
+                    <option>RS => Rio Grande do Sul</option>
+                    <option>RO => Rondônia</option>
+                    <option>RR => Roraima</option>
+                    <option>SC => Santa Catarina</option>
+                    <option>SP => São Paulo</option>
+                    <option>SE => Sergipe</option>
+                    <option>TO => Tocantins</option>                   
+                </select>
             </div>                 
 
             <div>            
