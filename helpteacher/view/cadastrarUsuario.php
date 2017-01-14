@@ -26,9 +26,14 @@
 
         <div>
         	<label for="confirmarSenha">Confirmar:</label>
-        	<input type="password" id="confirmarSenha" name="confirmarSenha">
-        	
+        	<input type="password" id="confirmarSenha" name="confirmarSenha">        	
          </div>
+
+         <p>
+         1-Administrador
+         <br/>
+         2-Professor
+         </p>
 
         <div>
         	<button type="submit" name="entrar">

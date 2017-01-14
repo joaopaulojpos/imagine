@@ -1,3 +1,14 @@
+<?php
+require_once '../model/conexao.php';
+
+$sql = "SELECT id_cidade FROM cidade";
+$query = mysqli_query($conn,$sql) or die("Erro: " . mysqli_error($conn));
+
+$sql1 = "SELECT id_tipo_inst FROM tipo_instituicao";
+$query1 = mysqli_query($conn,$sql1) or die("Erro: " . mysqli_error($conn));
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="pt-br">
@@ -7,82 +18,75 @@
     </head>
     <body>
         <h2><b>Cadastro Instituição</b></h2>
-        <form method="post" action="../model/cadastro/cadastrarInstituição.php">    
-
-            <div>
-                <label for="tipo">Tipo:</label>
-                <select name="tipo">
-                    <option value="">Selecione</option>
-                    <option value="escola">Escola</option>
-                </select>
-            </div> 
-
-            <div>
-                <label for="razaoSocial">Razão Social:</label>
-                <input type="text" id="razaoSocial" name="razaoSocial">
-            </div>   
-
-             <div>
-                <label for="nomeFantasia">Nome Fantasia:</label>
-                <input type="text" id="nomeFantasia" name="nomeFantasia">
-            </div>       
+        <form method="post" action="../model/cadastrar/cadastrarInstituicao.php">    
 
             <div>            
-                <label for="cnpj">CNPJ:</label>
-                <input type="text" id="cnpj" name="cnpj">
+                <label for="cnpj_inst">CNPJ:</label>
+                <input type="text" id="cnpj_inst" name="cnpj_inst">
+            </div>             
+
+             <div>
+                <label for="nome_inst">Nome:</label>
+                <input type="text" id="nome_inst" name="nome_inst">
             </div>               
 
             <div>            
-                <label for="cidade">Cidade:</label>
-                <input type="text" id="cidade" name="cidade">
+                <label for="logradouro_inst">Logradouro:</label>
+                <input type="text" id="logradouro_inst" name="logradouro_inst">
+            </div>  
+
+            <div>            
+                <label for="numero_inst">Número:</label>
+                <input type="text" id="numero_inst" name="numero_inst">
             </div>
 
             <div>            
-                <label for="estado">Estado:</label>
-                <select>
-                    <option value="">Selecione</option>
-                    <option>AC => Acre</option>
-                    <option>AL => Alagoas</option>
-                    <option>AP => Amapá</option>
-                    <option>AM => Amazonas</option>
-                    <option>BA => Bahia</option>
-                    <option>CE => Ceará</option>
-                    <option>DF => Distrito Federal</option>
-                    <option>ES => Espírito Santo</option>
-                    <option>GO => Goiás</option>
-                    <option>MA => Maranhão</option>
-                    <option>MT => Mato Grosso</option>
-                    <option>MS => Mato Grosso do Sul</option>
-                    <option>MG => Minas Gerais</option>
-                    <option>PA => Pará</option>
-                    <option>PB => Paraíba</option>
-                    <option>PR => Paraná</option>
-                    <option>PE => Pernambuco</option>
-                    <option>PI => Piauí</option>
-                    <option>RJ => Rio de Janeiro</option>
-                    <option>RN => Rio Grande do Norte</option>
-                    <option>RS => Rio Grande do Sul</option>
-                    <option>RO => Rondônia</option>
-                    <option>RR => Roraima</option>
-                    <option>SC => Santa Catarina</option>
-                    <option>SP => São Paulo</option>
-                    <option>SE => Sergipe</option>
-                    <option>TO => Tocantins</option>                   
-                </select>
-            </div>                 
+                <label for="complem_inst">Complemento:</label>
+                <input type="text" id="complem_inst" name="complem_inst">
+            </div>
 
             <div>            
-                <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone">
-            </div>                
+                <label for="bairro_inst">Bairro:</label>
+                <input type="text" id="bairro_inst" name="bairro_inst">
+            </div>
+
+            <div>            
+                <label for="tel_inst">Telefone:</label>
+                <input type="text" id="tel_inst" name="tel_inst">
+            </div>
+
+            <div>            
+                <label for="email_inst">Email:</label>
+                <input type="text" id="email_inst" name="email_inst">
+            </div>    
+
+            <div>            
+                <label for="id_cidade">Cidade:</label>
+                <select name="id_cidade">
+                    <option value="" selected>Selecione</option>
+                    <?php while ($row = mysqli_fetch_assoc($query)): ?>
+                    <option value="<?php echo $row['id_cidade'] ?>"><?php echo $row['id_cidade'] ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </div>
+
+            <div>            
+                <label for="id_tipo_inst">Tipo:</label>
+                <select name="id_tipo_inst">
+                    <option value="" selected>Selecione</option>
+                    <?php while ($row1 = mysqli_fetch_assoc($query1)): ?>
+                    <option value="<?php echo $row1['id_tipo_inst'] ?>"><?php echo $row1['id_tipo_inst'] ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </div>         
 
             <div>
-            <button  type="submit" name="entrar">
+            <button  type="submit" name="cadastrar">
              Cadastrar  
             </button>
             
             <button>
-            <a href="listarInstituicao.php">Listar</a>
+            <a href="listarInstituicoes.php">Listar</a>
             </button>
 
             <button>

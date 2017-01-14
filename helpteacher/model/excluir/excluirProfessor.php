@@ -2,18 +2,18 @@
 
 require_once '../conexao.php';
 
-$professorID = $_GET['professorID'];
+$cpf_prof = $_GET['cpf_prof'];
 
-$sql = "DELETE FROM professor WHERE professorID = '$professorID'";
-$query = mysqli_query($conn, $sql) or die("Não foi possível excluir o registro " . mysqli_error($conn));
+$sql = "DELETE FROM professor WHERE cpf_prof = '$cpf_prof'";
+$query = mysqli_query($conn, $sql) or die("Erro: " . mysqli_error($conn));
 
 if ($query) {
 
-    echo "<script type='text/javascript'>alert('Dados excluídos com sucesso!');location.href='../../view/listarProfessor.php';</script>";
+    echo "<script type='text/javascript'>alert('Dados excluídos com sucesso!');location.href='../../view/listarProfessores.php';</script>";
     
 } else {
 
-    echo "<script type='text/javascript'>alert('Não foi possível excluir o registro');location.href='../../view/listarProfessor.php';</script>";
+    echo "<script type='text/javascript'>alert('Não foi possível excluir o registro');location.href='../../view/listarProfessores.php';</script>";
 }
 mysqli_close($conn);
 ?>

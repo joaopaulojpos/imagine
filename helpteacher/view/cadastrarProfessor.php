@@ -7,25 +7,35 @@
     </head>
     <body>
         <h2><b>Cadastro Professor</b></h2>
-        <form method="post" action="../model/cadastro/cadastrarProfessor.php">    
+        <form method="post" action="../model/cadastrar/cadastrarProfessor.php">  
 
             <div>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome">
+                <label for="cpf_prof">CPF:</label>
+                <input type="text" id="cpf_prof" name="cpf_prof">
+            </div>     
+
+            <div>
+                <label for="nome_prof">Nome:</label>
+                <input type="text" id="nome_prof" name="nome_prof">
             </div>       
 
-            <div>            
-                <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone">
+           <div>
+                <label for="email_prof">Email:</label>
+                <input type="text" id="email_prof" name="email_prof">
+            </div> 
+
+            <div>
+                <label for="senha_prof">Senha:</label>
+                <input type="text" id="senha_prof" name="senha_prof">
             </div>                
 
             <div>
-            <button  type="submit"  name="entrar">
+            <button  type="submit"  name="cadastrar">
              Cadastrar  
             </button>
             
             <button>
-            <a href="listarProfessor.php">Listar</a>
+            <a href="listarProfessores.php">Listar</a>
             </button>
 
             <button>

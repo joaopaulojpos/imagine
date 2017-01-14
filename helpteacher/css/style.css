@@ -1,0 +1,21 @@
+body
+{
+	background-image: url('../img/plano_de_fundo.jpg');
+}
+
+label
+{
+	color: white;
+}
+
+h2
+{
+	color: white;
+	margin-left: 100px;
+}
+
+form
+{
+	margin-left: 350px;
+	margin-top: 180px;
+}

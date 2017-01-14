@@ -9,7 +9,7 @@
                 
         <h2>Início Professor</h2>
             <ul>                    
-                <li><a href="">Cadastrar Avaliação</a></li> 
+                <li><a href="">Cadastrar Avaliações</a></li> 
                 <li><a href="">Correção de Avaliações</a></li>                                            
             </ul>              
             <div>
