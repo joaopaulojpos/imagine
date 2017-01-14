@@ -2,9 +2,15 @@
     <html lang="pt-br">
        	<head>
        		<meta charset="utf-8">
+       		<meta http-equiv="X-UA-Compatible" content="IE-edge">
+        	<meta name="viewport" content="width=device-width, initial-scale=1">
+        	<link rel="stylesheet" href="../css/bootstrap.css">
+        	<link rel="stylesheet" href="../css/style.css">
        		<title>Help Teacher</title>
        </head>
        <body>
+       <div class="parallax"></div>
+       <div class="container theme-showcase" role="main">
         <?php require_once '../model/conexao.php'; ?>
 
         <?php if (isset($_POST['cpf_prof'])):?>
@@ -16,7 +22,7 @@
 				
 				<h2><b>Resultado da Pesquisa</b></h2>
 					<div>
-					<table>
+					<table class="table table-responsive">
 						<tbody>
 							<thead>
 								<tr>									
@@ -33,8 +39,8 @@
 								<td><?php echo $row['cpf_prof'] ?></td>
 								<td><?php echo $row['nome_prof'] ?></td>
 								<td><?php echo $row['email_prof'] ?></td>								
-								<td><a href="../model/excluir/excluirProfessor.php?cpf_prof=<?php echo $row['cpf_prof']; ?>">Deletar</a>
-								<a href="../view/editarProfessor.php?cpf_prof=<?php echo $row['cpf_prof']; ?>">Editar</a></td>
+								<td><a href="../model/excluir/excluirProfessor.php?cpf_prof=<?php echo $row['cpf_prof']; ?>"><span class="glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+								<a href="../view/editarProfessor.php?cpf_prof=<?php echo $row['cpf_prof']; ?>"><span class="glyphicon glyphicon-pencil text-primary" aria-hidden="true"></span></a></td>
 							</tr>
              
                 <?php endwhile; ?>
@@ -42,30 +48,39 @@
 					</table>
 					</div>
 					<br/>
-				<div >
-                <a href='listarProfessores.php'>Voltar</a>
+				<div >                
+				<button type="button" class="btn btn-primary" onclick="location.href='listarProfessores.php'">
+				Voltar
+				</button>				
                 </div>     
 			<?php else: ?>
             <?php //SQL para LISTAR os dados dos professores
             $sql = "SELECT cpf_prof, nome_prof, email_prof, senha_prof FROM professor";
             $query = mysqli_query($conn, $sql) or die("Erro: " . mysql_error($conn));?>
-
             <?php if (mysqli_num_rows($query) > 0):?>
-                
-                <h2><b>Lista de Professores</b></h2>
+                <h2><b>Lista de Professores</b></h2>                
 				<br>
 				<div>
-				<form method="post" action="">				
-					<div>
-						<label for="cpf_prof"><b>CPF:</b></label>
-						<input type="text" id="cpf_prof" name="cpf_prof"/>
-						<button type="submit" name="buscar">Buscar</button>						
-					</div>										
+				<form method="post" action="" class="form-horizontal">				
+					<div class="form-group">
+                		<div class="pull-left">
+							<label for="cpf_prof" class="control-label col-sm-2"><b>Pesquisar:</b></label>
+						</div>
+						<div class="col-sm-4">
+                    	<div class="input-group">
+							<input type="text" class="form-control" id="cpf_prof" name="cpf_prof" placeholder="Informe o CPF" />
+								<div class="input-group-btn">
+                            		<button class="btn btn-default" type="submit">
+                                	<i class="glyphicon glyphicon-search text-primary"></i>
+                           			 </button>
+                       			 </div>						
+						</div>	
+						</div>
+						</div>	
                 </form>
 				</div>
-				<br/><br/> 
 				<div>
-				<table>				
+				<table class="table table-responsive">			
 					<tbody>							
 						<thead>
 							<tr>								
@@ -81,16 +96,19 @@
 							<tr>								
 								<td><?php echo $row['cpf_prof'] ?></td>
 								<td><?php echo $row['nome_prof'] ?></td>
-								<td><?php echo $row['email_prof'] ?></td>								
-								<td><button><a href="../model/excluir/excluirProfessor.php?cpf_prof=<?php echo $row['cpf_prof']; ?>">Deletar</a></button>
-								<button><a href="../view/editarProfessor.php?cpf_prof=<?php echo $row['cpf_prof']; ?>">Editar</a></button></td>
+								<td><?php echo $row['email_prof'] ?></td>																
+								<td><a href="../model/excluir/excluirProfessor.php?cpf_prof=<?php echo $row['cpf_prof']; ?>"><span class="glyphicon glyphicon-trash text-danger" aria-hidden="true"></span></a>
+								<a href="../view/editarProfessor.php?cpf_prof=<?php echo $row['cpf_prof']; ?>"><span class="glyphicon glyphicon-pencil text-primary" aria-hidden="true"></span></a></td>
 							</tr>                        
                 <?php endwhile; ?> 						
 					</tbody>						
 				</table>							
 				<br/>
                 <div>
-				<a href="cadastrarProfessor.php">Voltar</a></div> 
+				<button type="button" class="btn btn-primary" onclick="location.href='cadastrarProfessor.php'">
+				Voltar
+				</button>
+				</div> 
 				</div>
 				<?php else:?>
 
@@ -99,5 +117,9 @@
 				<?php endif?>
 			<?php endif;?>
 			<?php mysqli_close($conn); ?>
+			</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="../jquery/jquery.slim.js"></script>
+        <script type="text/javascript" scr="../js/bootstrap.js"></script>
 	</body>
 </html>
