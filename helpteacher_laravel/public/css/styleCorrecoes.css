@@ -1,0 +1,53 @@
+/*#wrap-questao .questao{
+
+	display: none;
+}
+
+#wrap-questao .questao:first-child{
+
+	display: block;
+}*/
+
+#wrap-prova .prova{
+	
+	display: none;
+}
+
+#wrap-prova .prova:first-child{
+
+	display: block;
+}
+
+.questao:{
+	padding: 5px;
+	margin-top: 15px;
+}
+
+#prox,#ant{
+
+	display: none;
+}
+
+#wrap-prova #prox, #ultima {
+	float: right;
+}
+
+.btn_enviar{
+
+	margin-top: 23px;
+}
+
+.btn_corrigir{
+
+	margin-top: 15px;
+}
+
+.panel{
+
+	margin-top: 30px;
+}
+
+.next{
+
+	float: right;
+}

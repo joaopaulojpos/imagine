@@ -1,0 +1,120 @@
+/*
+.body-login
+{
+	background-color: #00C6BA;
+}
+
+.header-login
+{
+	color: #FFFFFF;
+	text-align: center;
+	margin-top: 165px;
+}
+
+.hr-login
+{
+	width: 500px;
+}
+
+.radio-login
+{
+	/*text-align: right;
+	color: #FFFFFF;
+}
+
+.form-login
+{
+	width: 600px;
+	height: 500px;
+	margin: auto;
+	padding: 30px
+}
+
+.login-box-msg
+{
+	text-align: center;
+	color: #FFFFFF;
+}*/
+
+.link-admin
+{	
+	text-align: right;	
+}
+
+.btn
+{
+	width: 108px;
+}
+
+.btn-lateral
+{
+	float: right;
+	margin-top: -40px;	
+}
+
+.h1-prova
+{
+	text-align: left;
+	clear: right;
+}
+
+#hd-cdu
+{
+	color: #FFFFFF;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.btn-cdu
+{
+	width: 180px;
+}
+
+#bd-rd-gabarito
+{
+	border: 1px solid #D3D3D3;
+	border-radius: 6px;
+	width: 260px;
+	height: 35px;
+	padding: 5px;
+}
+
+#bd-rd-prova
+{
+	border: 1px solid #D3D3D3;
+	border-radius: 6px;
+	width: 360px;
+	height: 35px;
+	padding: 5px;
+}
+
+#opcao
+{
+	color: #FFFFFF;
+}
+
+.h2_avaliacao
+{
+	text-align: center;
+}
+
+#button-quest
+{
+	float: right;
+	margin-top: -38px;
+}
+
+.icones
+{
+	text-align: right;
+}
+
+#lista
+{
+	list-style-type: none;
+}
+
+.lista-result
+{
+	float: left;
+}
